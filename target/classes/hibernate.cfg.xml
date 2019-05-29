@@ -23,7 +23,7 @@
         </property>
 
         <property name = "hibernate.connection.password">
-            strzegom1
+            admin
         </property>
 
         <property name="hibernate.hbm2ddl.auto">update</property>
