@@ -11,6 +11,9 @@
 
 <body>
 
+<jsp:include page="elements/navbar.jsp"/>
+
+
 <header class="header">
 
     <div class="text-box">

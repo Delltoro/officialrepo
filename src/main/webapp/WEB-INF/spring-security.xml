@@ -7,18 +7,42 @@
            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
     <http auto-config='true' use-expressions="true">
-        <intercept-url pattern="views/login.jsp" access="isAuthenticated()"></intercept-url>
+<!--        <intercept-url pattern="views/login.jsp" access="isAuthenticated()"></intercept-url>-->
 <!--    <intercept-url pattern="/**" access="hasRole('ROLE_USER')" />-->
-        <intercept-url pattern="/secret" access="hasRole('ROLE_USER')"></intercept-url>
+        <intercept-url pattern="/secret" access="isAuthenticated()"></intercept-url>
+        <intercept-url pattern="/table_tennis" access="isAuthenticated()"></intercept-url>
+        <intercept-url pattern="/tennis" access="isAuthenticated()"></intercept-url>
+        <intercept-url pattern="/badminton" access="isAuthenticated()"></intercept-url>
         <form-login login-page="/custom_login" />
+        <logout logout-url="/logout"
+                logout-success-url="/" />
+
     </http>
+
+    <beans:bean id="dataSource"
+                class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <beans:property name="url" value="jdbc:mysql://localhost:3306/java_db?serverTimezone=UTC" />
+        <beans:property name="username" value="root" />
+        <beans:property name="password" value="admin" />
+    </beans:bean>
+
     <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="admin" password="1234" authorities="ROLE_ADMIN,ROLE_USER" />
-                <user name="bob" password="bob123" authorities="ROLE_USER" />
-            </user-service>
+            <jdbc-user-service data-source-ref="dataSource"
+                               users-by-username-query="SELECT username, password, true FROM User WHERE username=?"
+                              authorities-by-username-query="SELECT username, 'ROLE_USER' FROM User WHERE username=?" />
         </authentication-provider>
     </authentication-manager>
+
+<!--    ####### STATYCZNI UZYTKOWNICY ##############-->
+<!--    <authentication-manager>-->
+<!--        <authentication-provider>-->
+<!--            <user-service>-->
+<!--                <user name="admin" password="1234" authorities="ROLE_ADMIN,ROLE_USER" />-->
+<!--                <user name="bob" password="bob123" authorities="ROLE_USER" />-->
+<!--            </user-service>-->
+<!--        </authentication-provider>-->
+<!--    </authentication-manager>-->
 
 </beans:beans>
