@@ -188,6 +188,10 @@ thead {
     padding-bottom: 3px;
 }
 
+.table_header {
+    padding-right: 5px;
+}
+
 hr {
     background-image: linear-gradient(
             to right bottom,

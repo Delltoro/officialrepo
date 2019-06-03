@@ -41,9 +41,9 @@
                 <tbody>
                 <c:forEach items="${advertisements}" var="adv">
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>${adv.discipline}</td>
+                    <td>${adv.city}</td>
+                    <td>${adv.cityRegion}</td>
                 </tr>
                 </c:forEach>
                </tbody>

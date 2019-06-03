@@ -115,3 +115,20 @@ public class Advertisement {
 
 
 }
+
+/*
+insert into advertisement
+values
+(
+	1,
+	"wroclaw" ,
+    "srodmiescie" ,
+    "lubie grac w tenisia" ,
+    "tenis" ,
+    5,
+    true,
+    true,
+    1
+)
+
+ */
