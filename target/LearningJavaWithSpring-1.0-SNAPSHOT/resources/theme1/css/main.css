@@ -80,8 +80,8 @@ body {
 }
 
 .section-advertisement {
-    padding: 25rem 0;
-    margin-top: -20vh;
+    padding: 15rem 0;
+    margin-top: -3vh;
     background-image: linear-gradient(to bottom right,#1c92d2,#f2fcfe);
 }
 
@@ -180,22 +180,27 @@ body {
     opacity: 0;
 }
 
-table {
-    border-spacing: 0.5rem;
-}
-
-thead {
-    padding-bottom: 3px;
-}
-
-hr {
-    background-image: linear-gradient(
-            to right bottom,
-            rgba(30, 60, 114, 0.8),
-            rgba(42, 82, 152, 0.8));
+.btn-adv {
+    margin-bottom: 4rem;
 }
 
 
+.table_header {
+    padding-right: 5px;
+}
+
+.centring {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.advertisements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Don
@@ -15,7 +16,6 @@ Login user: <h1>${name}</h1>
 
 <main>
 
-
     <section class="section-register">
         <div class="row">
             <div class="register">
@@ -24,12 +24,12 @@ Login user: <h1>${name}</h1>
                         <h2 class="heading-secondary">Register and search for a sparing partner</h2>
 
                         <div class="form__group">
-                            <input id="disc" name="disciplineJSP" type="text" class="form__input"placeholder="Discipline" required>
+                            <input id="disc" name="disciplineJSP" value="${discipline}" type="text" class="form__input"placeholder="${discipline}" required disabled>
                             <label for="disc" class="form__label">Discipline</label>
                         </div>
 
                         <div class="form__group">
-                            <input id="description" name="descriptionJSP" type="text" class="form__input"placeholder="description" required>
+                            <input id="description" name="descriptionJSP" type="text" class="form__input"placeholder="Description" required>
                             <label for="description" class="form__label">description"</label>
                         </div>
 
