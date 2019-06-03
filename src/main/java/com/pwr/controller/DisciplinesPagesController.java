@@ -1,19 +1,29 @@
 package com.pwr.controller;
 
+import com.pwr.model.Advertisement;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+//import com.pwr.service.AdvertisementService;
 
 import javax.jws.WebParam;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class DisciplinesPagesController {
 
+    //AdvertisementService advertisementService;
+    // List<Advertisement> listAdvertisement = new ArrayList<Advertisement>();
+
+
     @RequestMapping(method = RequestMethod.GET , value = "/table_tennis")
     public ModelAndView showTableTennisPage() {
         ModelAndView mv = new ModelAndView();
+     //   mv.addObject("advertisements", advertisementService.findAllInTableTennis());
         mv.setViewName("tableTennis");
         return mv;
     }
@@ -31,4 +41,6 @@ public class DisciplinesPagesController {
         mv.setViewName("badminton");
         return mv;
     }
+
+
 }

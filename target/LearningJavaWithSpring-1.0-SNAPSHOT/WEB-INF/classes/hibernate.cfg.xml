@@ -29,6 +29,9 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- List of XML mapping files -->
+        <mapping class="com.pwr.model.Advertisement"/>
+        <mapping class="com.pwr.model.User"/>
+
 
 
     </session-factory>

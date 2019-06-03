@@ -4,95 +4,86 @@ package com.pwr.model;
 import java.util.Date;
 import java.util.Vector;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Advertisement {
 
-    enum gameStyle {
-        OFFENSIVE,
-        DEFENSIVE
-    }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int     idAdv;
-    private  String  discipline;
+
+    private  int  discipline;
     private  String  description;
-  //  private  LocalDate createdAt;
-  //  private  LocalDate    expireAt;
+
+    @Column(nullable = false)
     private  String  city;
+    @Column(nullable = false)
     private  String  cityRegion;
+
     private  int     experience;
     private  boolean wantSparring;
     private  boolean wantTraining;
 
-    @ManyToOne
-    @JoinColumn(name ="FK_UserID")
-    private User user;
-
-    enum playerSkills {
+    public enum playerSkills {
         BEGINNER,
         INTERMEDIATE,
         UPPER_INTERMEDIATE,
         ADVANCED,
         EXPERT
     }
+    public enum gameStyle {
+        OFFENSIVE,
+        DEFENSIVE
+    }
 
-    public String getDiscipline() {
+
+    @ManyToOne
+    public User user;
+
+    //GETTERS
+    public int getDiscipline() {
         return discipline;
     }
-
-    public void setDiscipline(String discipline) {
-        this.discipline = discipline;
-    }
-
     public String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getCity() {
         return city;
     }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public String getCityRegion() {
         return cityRegion;
     }
-
-    public void setCityRegion(String cityRegion) {
-        this.cityRegion = cityRegion;
-    }
-
     public int getExperience() {
         return experience;
     }
-
-    public void setExperience(int experience) {
-        this.experience = experience;
-    }
-
-    public boolean isWantSparring() {
+    public boolean getWantSparring() {
         return wantSparring;
     }
-
-    public void setWantSparring(boolean wantSparring) {
-        this.wantSparring = wantSparring;
-    }
-
-    public boolean isWantTraining() {
+    public boolean getWantTraining() {
         return wantTraining;
     }
 
+    //SETTERS
+    public void setDiscipline(int discipline) {
+        this.discipline = discipline;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public void setCity(String city) {
+        this.city = city;
+    }
+    public void setCityRegion(String cityRegion) {
+        this.cityRegion = cityRegion;
+    }
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+    public void setWantSparring(boolean wantSparring) {
+        this.wantSparring = wantSparring;
+    }
     public void setWantTraining(boolean wantTraining) {
         this.wantTraining = wantTraining;
     }
@@ -110,8 +101,8 @@ public class Advertisement {
                 ", wantTraining=" + wantTraining +
                 '}';
     }
-
-    public Advertisement(User user,String discipline, String description, String city, String cityRegion, int experience, boolean wantSparring, boolean wantTraining) {
+    public Advertisement(User user, String description, String city, String cityRegion, int experience,
+                         boolean wantSparring, boolean wantTraining) {
         this.discipline = discipline;
         this.description = description;
         this.city = city;
@@ -121,4 +112,6 @@ public class Advertisement {
         this.wantTraining = wantTraining;
         this.user = user;
     }
+
+
 }
