@@ -10,18 +10,18 @@
 <html>
 <head>
     <title>User account</title>
+    <link href="<c:url value="/resources/theme1/css/main.css" />" rel="stylesheet">
 </head>
 <body>
-Login user: <h1>${name}</h1>
-
 <main>
 
     <section class="section-register">
+        <h2 class="heading-secondary">You are login as: <strong>${user}</strong></h2>
         <div class="row">
             <div class="register">
                 <div class="register__form">
                     <form class="form" action="addAdver">
-                        <h2 class="heading-secondary">Register and search for a sparing partner</h2>
+                        <h2 class="heading-secondary">Add new advertisement</h2>
 
                         <div class="form__group">
                             <input id="disc" name="disciplineJSP" value="${discipline}" type="text" class="form__input"placeholder="${discipline}" required disabled>
@@ -45,18 +45,23 @@ Login user: <h1>${name}</h1>
 
 
                         <div class="form__group">
-                            <input id="experience" name="experienceJSP" type="email" class="form__input"placeholder="experience" required>
+                            <input id="experience" name="experienceJSP" type="text" class="form__input"placeholder="experience" required>
                             <label for="experience" class="form__label">experience</label>
                         </div>
 
                         <div class="form__group">
-                            <input id="wantSparring" name="wantSparringJSP" type="email" class="form__input"placeholder="wantSparring" required>
+                            <input id="wantSparring" name="wantSparringJSP" type="text" class="form__input"placeholder="wantSparring" required>
                             <label for="wantSparring" class="form__label">wantSparring</label>
                         </div>
 
                         <div class="form__group">
-                            <input id="wantTraining" name="wantTrainingJSP" type="email" class="form__input"placeholder="wantTraining" required>
+                            <input id="wantTraining" name="wantTrainingJSP" type="text" class="form__input"placeholder="wantTraining" required>
                             <label for="wantTraining" class="form__label">wantTraining</label>
+                        </div>
+
+                        <div class="form__group">
+                            <input id="user_id" name="username" value="${user}" type="text" class="form__input"placeholder="userID" required>
+                            <label for="user_id" class="form__label">userID</label>
                         </div>
 
                         <div class="form__group">

@@ -22,7 +22,6 @@ public class RegisterService {
 
     User user = new User(pass,uname,firstname,lastname,mail);
     Transaction tx = session.beginTransaction();
-
         session.save(user);
         tx.commit();
 

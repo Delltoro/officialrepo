@@ -101,7 +101,7 @@ public class Advertisement {
                 ", wantTraining=" + wantTraining +
                 '}';
     }
-    public Advertisement(User user, String description, String city, String cityRegion, int experience,
+    public Advertisement(User user, int discipline,String description, String city, String cityRegion, int experience,
                          boolean wantSparring, boolean wantTraining) {
         this.discipline = discipline;
         this.description = description;
@@ -111,6 +111,9 @@ public class Advertisement {
         this.wantSparring = wantSparring;
         this.wantTraining = wantTraining;
         this.user = user;
+    }
+    public Advertisement(){
+
     }
 
 

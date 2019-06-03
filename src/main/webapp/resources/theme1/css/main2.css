@@ -1,0 +1,15 @@
+.row-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+table {
+    max-width: 100%;
+}

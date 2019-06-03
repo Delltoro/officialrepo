@@ -24,11 +24,12 @@ public class DisciplinesPagesController {
     @RequestMapping(method = RequestMethod.GET , value = "/table_tennis")
     public ModelAndView showTableTennisPage() {
         ModelAndView mv = new ModelAndView();
-
+/*
         //mv.addObject("advertisements", advertisementService.findAllInTableTennis());
         listAdvertisement = advertisementService.findAllInTableTennis();
         if(listAdvertisement != null)
             mv.addObject("advertisements", listAdvertisement);
+  */
         mv.setViewName("tableTennis");
         return mv;
     }
